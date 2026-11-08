@@ -250,7 +250,7 @@
   .quiet {
     color: var(--hero-ink);
     font-weight: 500;
-    border-bottom-color: oklch(0.2 0.03 267 / 0.4);
+    border-bottom-color: oklch(0.1929 0.0087 334.62 / 0.4);
   }
 
   .quiet:hover {

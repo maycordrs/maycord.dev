@@ -14,8 +14,8 @@
   --warn: light-dark(oklch(0.89 0.18 93), oklch(0.86 0.17 92));
   --warn-ink: oklch(0.22 0.04 75);
   --warn-line: oklch(0.22 0.04 75 / 0.25);
-  --hero: light-dark(oklch(0.74 0.055 267), oklch(0.62 0.053 267));
-  --hero-ink: oklch(0.2 0.03 267);
+  --hero: oklch(0.8006 0.0998 355.92);
+  --hero-ink: oklch(0.1929 0.0087 334.62);
   --frame: 72rem;
   --gutter: 1.25rem;
 }
