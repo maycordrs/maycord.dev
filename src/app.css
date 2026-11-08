@@ -18,6 +18,7 @@
   --hero-ink: oklch(0.1929 0.0087 334.62);
   --frame: 72rem;
   --gutter: 1.25rem;
+  --site-header-height: 5.75rem;
 }
 
 :root[data-theme="light"] {
@@ -47,6 +48,7 @@
 }
 
 html {
+  scroll-padding-top: var(--site-header-height);
   background: var(--bg);
   -webkit-text-size-adjust: 100%;
 }

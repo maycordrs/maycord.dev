@@ -10,12 +10,12 @@
   <meta property="og:url" content="https://maycord.dev/warning" />
   <meta
     property="og:description"
-    content="discord's rust client is not publicly available and maycord has no public download. how to treat early rewrite and injector claims, and keep your account safe."
+    content="how to assess client-mod claims, verify downloads, and understand the risks to your discord account and device."
   />
   <meta name="twitter:card" content="summary" />
   <meta
     name="description"
-    content="discord's rust client is not publicly available and maycord has no public download. how to treat early rewrite and injector claims, and keep your account safe."
+    content="how to assess client-mod claims, verify downloads, and understand the risks to your discord account and device."
   />
 </svelte:head>
 
@@ -41,8 +41,7 @@
       <div class="body">
         <p>
           a standalone client is a separate app that talks to discord’s servers on its own, while a mod changes the
-          official discord app from the inside. either way, a demo or a program written in rust does not prove that
-          a project behaves like the official app or is safe for your account.
+          official discord app from the inside.
         </p>
         <p>
           discord’s
@@ -66,8 +65,8 @@
       <div class="body">
         <p>
           news about a new native client can bring fake projects and harmful downloads. familiar screenshots, low
-          memory use, or the word rust do not make a download safe, and a project that claims to work with a client
-          nobody can download yet should show real evidence.
+          memory use, or the word rust do not make a download safe, and claims of compatibility with an unreleased
+          client need verifiable evidence.
         </p>
         <p>
           <strong>this includes maycord.</strong> do not trust our claims just because they appear on this website.
@@ -86,10 +85,8 @@
       <div class="body">
         <ul>
           <li>never give your discord password or account token to an app, website, or install script you can’t verify.</li>
-          <li>don’t run a file just because a post calls it a client mod.</li>
           <li>
-            check discord’s own announcements for client releases, and follow maycord only on maycord.dev, where
-            there are no downloads yet.
+            check discord’s own announcements for client releases, and follow maycord only on maycord.dev.
           </li>
         </ul>
         <p>

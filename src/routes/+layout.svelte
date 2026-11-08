@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
+  import { page } from '$app/state';
+  import DocSearch from '../lib/DocSearch.svelte';
   import LinkIcon from '../lib/LinkIcon.svelte';
   import '../app.css';
 
@@ -12,6 +14,15 @@
       <a class="brand" href="/" aria-label="maycord home">
         <img src="/favicon.svg" alt="" width="28" height="28" />maycord
       </a>
+      <div class="nav-actions">
+        <a class="nav-link icon-link" href="https://fpui.dev/" rel="noreferrer" target="_blank"
+          >fpui<svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" /></svg><span class="sr-only"> (opens in a new tab)</span></a
+        >
+        <a class="nav-link" href="/docs" aria-current={page.url.pathname === '/docs' ? 'page' : page.url.pathname.startsWith('/docs/') ? 'true' : undefined}
+          >docs</a
+        >
+        <DocSearch />
+      </div>
     </nav>
   </header>
 
@@ -47,7 +58,7 @@
     </div>
     <p>maycord is an independent project, not affiliated with or endorsed by discord inc.</p>
     <p>
-      <a class="icon-link" href="https://github.com/maycordrs/maycord.dev" rel="noreferrer" target="_blank"
+      <a id="site-license" class="icon-link" href="https://github.com/maycordrs/maycord.dev" rel="noreferrer" target="_blank"
         >this site is mit licensed<LinkIcon /><span class="sr-only"> (opens in a new tab)</span></a
       >
     </p>
@@ -65,12 +76,29 @@
     flex: 1;
   }
 
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: var(--site-header-height);
+    background: var(--bg);
+  }
+
   nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     width: min(100%, calc(var(--frame) + var(--gutter) * 2));
+    height: 100%;
     margin-inline: auto;
-    padding: 1.5rem var(--gutter);
+    padding-inline: var(--gutter);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 3vw, 1.5rem);
   }
 
   .brand {
@@ -81,6 +109,27 @@
     font-weight: 600;
     letter-spacing: -0.03em;
     text-decoration: none;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    border-bottom: 0;
+    color: var(--muted);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .nav-link:hover,
+  .nav-link[aria-current] {
+    color: var(--ink);
+  }
+
+  .nav-link[aria-current] {
+    text-decoration: underline 2px var(--accent);
+    text-underline-offset: 0.4em;
   }
 
   .foot {

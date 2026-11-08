@@ -10,11 +10,11 @@
   <meta property="og:title" content="maycord | an upcoming client mod for discord’s rust app" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://maycord.dev/" />
-  <meta property="og:description" content="maycord is an upcoming client mod for discord’s rust app. themes and plugins are in early development, with no public download yet." />
+  <meta property="og:description" content="maycord is an upcoming client mod for discord’s rust app, built on fpui. explore the documentation, development updates, and community." />
   <meta name="twitter:card" content="summary" />
   <meta
     name="description"
-    content="maycord is an upcoming client mod for discord’s rust app. themes and plugins are in early development, with no public download yet."
+    content="maycord is an upcoming client mod for discord’s rust app, built on fpui. explore the documentation, development updates, and community."
   />
 </svelte:head>
 
@@ -67,33 +67,56 @@
     </div>
   </section>
 
+  <section class="frame framework" aria-labelledby="fpui-title">
+    <div class="framework-card">
+      <h2 id="fpui-title">
+        <svg class="framework-mark" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m9 24 12 8-12 8m30-16-12 8 12 8m4-16 12 8-12 8" />
+        </svg>
+        built on fpui
+      </h2>
+      <div>
+        <p>
+          fpui is a framework for changing how native gpui apps look and work. maycord uses its themes, sandboxed
+          plugins, and runtime patching tools to focus on discord.
+        </p>
+        <p class="more">
+          <a class="icon-link" href="https://fpui.dev/" rel="noreferrer" target="_blank"
+            >explore fpui<LinkIcon /><span class="sr-only"> (opens in a new tab)</span></a
+          >
+        </p>
+      </div>
+    </div>
+  </section>
+
   <section class="frame faq" id="faq" aria-labelledby="faq-title">
     <h2 id="faq-title">questions</h2>
     <dl>
       <div>
         <dt>is maycord a standalone client?</dt>
         <dd>
-          no. maycord will modify discord’s native rust app rather than replace it, so you’ll need the official,
-          compatible client installed.
+          no. maycord will modify a compatible official discord client, so you’ll need that client installed.
         </dd>
       </div>
       <div>
-        <dt>has discord’s rust client been released?</dt>
+        <dt>why is fpui a separate project from maycord?</dt>
         <dd>
-          no. it had not been publicly released when we last checked on 8 november 2026, so watch discord’s own
-          announcements for release news.
+          we split the patching engine out early so other gpui apps could use it, while maycord could focus on
+          discord. each supported app and build needs a compatible adapter.
         </dd>
       </div>
       <div>
-        <dt>does it work with the current discord app?</dt>
-        <dd>no. maycord is being built for the upcoming rust client, so it will not work with today’s discord app.</dd>
+        <dt>which discord app will maycord work with?</dt>
+        <dd>
+          maycord is intended for discord’s upcoming native rust client. it does not work with the current discord
+          app, and the native client had not been publicly released when we last checked on 8 november 2026.
+        </dd>
       </div>
       <div>
         <dt>is it possible?</dt>
         <dd>
-          we think so. discord is building its new client with gpui, the same framework as our macos test app, where
-          maycord can already inject itself and change colors while the app runs. we still need to repeat those
-          tests on discord’s own client once it is released.
+          fpui has already changed colors, run plugins, and changed behavior in native gpui test apps on macos.
+          those results give maycord a foundation, but compatibility still needs testing on discord’s own client.
         </dd>
       </div>
       <div>
@@ -101,45 +124,31 @@
         <dd>i like a challenge, and honestly, i wasn’t sure what else to do with my free time.</dd>
       </div>
       <div>
-        <dt>what has been prototyped so far?</dt>
-        <dd>
-          <ul>
-            <li>light and dark color themes</li>
-            <li>live color changes in a gpui test app</li>
-            <li>version checks that stop maycord from loading into unsupported apps</li>
-            <li>plugins that react to events in the test app and only receive the access you allow</li>
-            <li>an early overlay for adding extra interface elements</li>
-          </ul>
-          <p>
-            these are early prototypes that may change as development continues. we also plan to support windows
-            and linux and provide an installer.
-          </p>
-        </dd>
-      </div>
-      <div>
         <dt>how would maycord be installed?</dt>
         <dd>
-          you would install the official native client, then open it through maycord. its loader would check your
-          client version before applying themes and plugins, but this flow is still a prototype and has no released
-          installer.
+          the intended flow is to load maycord when a compatible official client starts, then apply your themes
+          and plugins. we are still working out the installer and update process.
         </dd>
       </div>
       <div>
-        <dt>where can i download it?</dt>
-        <dd>there is no public download yet. when one is ready, we will announce it on maycord.dev.</dd>
+        <dt>where can i get updates or download maycord?</dt>
+        <dd>
+          there is no public download yet, but you can
+          <a class="icon-link" href="https://discord.gg/pFBbwyX2JK" rel="noreferrer" target="_blank"
+            >join the discord<LinkIcon /><span class="sr-only"> (opens in a new tab)</span></a
+          >
+          for development updates and release announcements.
+        </dd>
       </div>
       <div>
         <dt>is this against discord’s terms of service?</dt>
         <dd>
-          yes. like other unofficial client mods, maycord would modify the discord app in ways that discord’s <a class="icon-link"
-            href="https://discord.com/terms"
-            rel="noreferrer"
-            target="_blank"
-            >terms of service<LinkIcon /><span class="sr-only"
-              > (opens in a new tab)</span
-            ></a
+          yes. like other unofficial client mods, maycord would modify the discord app in ways that discord’s
+          <a class="icon-link" href="https://discord.com/terms" rel="noreferrer" target="_blank"
+            >terms of service<LinkIcon /><span class="sr-only"> (opens in a new tab)</span></a
           >
           do not allow, so using it could put your account at risk.
+          <a href="/warning">read the full warning</a> before trying a mod.
         </dd>
       </div>
     </dl>
@@ -187,7 +196,8 @@
     text-wrap: pretty;
   }
 
-  .notice .more {
+  .notice .more,
+  .framework-card .more {
     margin-top: 1rem;
     font-weight: 600;
   }
@@ -268,6 +278,47 @@
     letter-spacing: -0.03em;
   }
 
+  .framework {
+    padding-top: 1.25rem;
+  }
+
+  .framework-card {
+    display: grid;
+    align-items: center;
+    gap: 1.25rem 3rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border-radius: 1rem;
+    background: oklch(0.87710 0.05777 242.13);
+    color: oklch(0.24913 0.03445 246.14);
+  }
+
+  .framework-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0;
+    font-size: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
+  }
+
+  .framework-mark {
+    flex: none;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .framework-card p {
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  .framework-card a {
+    color: inherit;
+  }
+
+  .framework-card :focus-visible {
+    outline-color: currentColor;
+  }
+
   .faq {
     padding-top: clamp(3rem, 8vw, 5.5rem);
   }
@@ -295,24 +346,11 @@
     text-wrap: pretty;
   }
 
-  dd p {
-    margin: 0;
-  }
-
-  dd ul + p {
-    margin-top: 0.85rem;
-  }
-
-  dd ul {
-    margin: 0;
-    padding-inline-start: 1.15rem;
-  }
-
-  dd li + li {
-    margin-top: 0.25rem;
-  }
-
   @media (min-width: 60rem) {
+    .framework-card {
+      grid-template-columns: 1fr 2fr;
+    }
+
     .faq dl > div {
       padding-block: 1.6rem;
     }
