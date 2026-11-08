@@ -77,8 +77,9 @@
       </h2>
       <div>
         <p>
-          fpui is a framework for changing how native gpui apps look and work. maycord uses its themes, sandboxed
-          plugins, and runtime patching tools to focus on discord.
+          fpui is a runtime mod framework for native apps. its core patches machine code, so it does not depend
+          on the app’s ui framework. maycord uses its adapters, patching tools, and sandboxed plugin host to build
+          customizations for discord.
         </p>
         <p class="more">
           <a class="icon-link" href="https://fpui.dev/" rel="noreferrer" target="_blank"
