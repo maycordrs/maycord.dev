@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "maycord(?:-mayspace)?\\.vercel\\.app"
+        }
+      ],
+      "destination": "https://maycord.dev/:path*",
+      "permanent": true
+    }
+  ]
+}
